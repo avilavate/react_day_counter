@@ -11,7 +11,8 @@ class Counter extends Component {
             'days': 0,
             'hors': 0,
             'minutes': 0,
-            'seconds': 0
+            'seconds': 0,
+            input: ''
         };
         this.getDifference();
     }
@@ -41,7 +42,6 @@ class Counter extends Component {
 
         // what's left is seconds
         let seconds = Math.floor((delta % 60));
-        console.log(days, minutes);
         this.setState({
             'days': days,
             'hors': hours,
@@ -49,7 +49,6 @@ class Counter extends Component {
             'seconds': seconds
         }
         )
-        console.dir(this.state);
     }
     render() {
 
@@ -58,9 +57,14 @@ class Counter extends Component {
                 <h3>Total {this.state.days} day(s), {this.state.hors} hour(s), {this.state.minutes} minute(s) and {this.state.seconds} second(s) for</h3>
                 <h2>{this.props.deadLine}</h2>
                 <hr />
-                <input type="text" placeholder="Enter date from" />
+                <input type="text" placeholder="Enter date from" value={this.state.input} onChange={this.getNewDeadline.bind(this)} />
             </div>
         )
+    }
+    getNewDeadline(e) {
+        this.setState({ 'input': e.target.value }, () => {
+            console.log(this.state.input);
+        });
     }
 }
 
