@@ -12,7 +12,8 @@ class Counter extends Component {
             'hors': 0,
             'minutes': 0,
             'seconds': 0,
-            input: ''
+            'input': '',
+            'deadLine': ''
         };
         this.getDifference();
     }
@@ -24,6 +25,7 @@ class Counter extends Component {
     }
 
     getDifference() {
+        this.setState({ 'deadLine': this.props.deadline });
         let deadLine = Date.parse(this.props.deadline);
         // get total seconds between the times
         var delta = Math.abs(new Date() - deadLine) / 1000;
@@ -51,11 +53,11 @@ class Counter extends Component {
         )
     }
     render() {
-
         return (
             <div className="Counter">
-                <h3>Total {this.state.days} day(s), {this.state.hors} hour(s), {this.state.minutes} minute(s) and {this.state.seconds} second(s) for</h3>
-                <h2>{this.props.deadLine}</h2>
+                <h3>Total {this.state.days} day(s), {this.state.hors} hour(s), {this.state.minutes} minute(s) and {this.state.seconds} second(s) </h3>
+                <h4>for</h4>
+                <h2>{this.state.deadLine}</h2>
                 <hr />
                 <input type="text" placeholder="Enter date from" value={this.state.input} onChange={this.getNewDeadline.bind(this)} />
             </div>
