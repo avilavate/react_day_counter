@@ -4,10 +4,9 @@ import './App.css';
 import Counter from './counter/counter';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   deadline = "December 25 2017";
   render() {
     return (
@@ -16,7 +15,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to Day Counter</h2>
         </div>
-        <Counter deadline={this.deadline}/>
+        <Counter deadline={this.deadline} />
       </div>
     );
   }

@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import './counter.css';
 
 class Counter extends Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-    }
+    // }
     componentWillMount() {
         this.state = {
             'days': 0,
