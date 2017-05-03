@@ -14,6 +14,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.28.1",
     "file-loader": "^0.11.1",
+    "lite-server": "^2.3.0",
     "react-scripts": "0.9.5",
     "svg-inline-loader": "^0.7.1"
   },
@@ -21,6 +22,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "serve":"lite-server --baseDir='build'",
+      
+    "dev": "lite-server -c bs-config.json"
+ 
   }
 }
