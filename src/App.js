@@ -4,10 +4,11 @@ import './App.css';
 import Counter from './counter/counter';
 
 class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-  deadline = "December 25 2017";
+  constructor(props) {
+    super(props);
+    this.deadline = "December 25 2017";
+  }
+
   render() {
     return (
       <div className="App">

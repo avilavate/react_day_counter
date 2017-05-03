@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import leadingZero from '../utils/leadingZero';
 import './counter.css';
 
 class Counter extends Component {
@@ -24,6 +25,8 @@ class Counter extends Component {
             this.getDifference();
         }, 1000, this);
     }
+
+
 
     getDifference() {
         if (!(!!Date.parse(this.props.deadline))) return;
@@ -58,7 +61,7 @@ class Counter extends Component {
     render() {
         return (
             <div className="Counter">
-                <h3>Total {this.state.days} day(s), {this.state.hors} hour(s), {this.state.minutes} minute(s) and {this.state.seconds} second(s) </h3>
+                <h3>Total {leadingZero(this.state.days)} day(s), {leadingZero(this.state.hors)} hour(s), {leadingZero(this.state.minutes)} minute(s) and {leadingZero(this.state.seconds)} second(s) </h3>
                 <h4>for</h4>
                 <h2>{this.state.deadLine}</h2>
 
